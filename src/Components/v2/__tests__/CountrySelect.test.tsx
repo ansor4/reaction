@@ -15,4 +15,11 @@ describe("CountrySelect", () => {
 
     wrapper.find("select").simulate("change")
   })
+
+  describe("when limited to list of continental european countries", () => {
+    it("selects first country in list", () => {
+      const wrapper = mount(<CountrySelect euShippingOnly />)
+      expect(wrapper.find("select").props().value).toBe("AD")
+    })
+  })
 })

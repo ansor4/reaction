@@ -13,6 +13,11 @@ export const CountrySelect = (props: CountrySelectProps) => {
   return (
     <LargeSelect
       {...props}
+      selected={
+        props.euShippingOnly
+          ? EU_COUNTRY_SELECT_OPTIONS[0].value
+          : props.selected
+      }
       options={
         props.euShippingOnly
           ? EU_COUNTRY_SELECT_OPTIONS
